@@ -11,14 +11,28 @@
                              http://www.springframework.org/schema/mvc 
                              http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	<context:component-scan base-package="top.lllyl2012" />
+	<mvc:annotation-driven>
+   		<mvc:message-converters>
+   			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+   				<property name="supportedMediaTypes" >
+   					<list>
+   						<value>text/html;charset=utf-8</value>
+   						<value>application/json;charset=utf-8</value>
+   						<value>*/*;charset=utf-8</value>
+   					</list>
+   				</property>
+   			</bean>
+   		</mvc:message-converters>
+   	</mvc:annotation-driven>
 	<context:annotation-config />
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix">
-			<value>/WEB-INF/</value>
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
+	<bean id="tilesViewResolver"
+		class="org.springframework.web.servlet.view.tiles3.TilesViewResolver" />
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>classpath:layout.xml</value>
+			</list>
 		</property>
 	</bean>
 	<!-- 配置redis储存session -->

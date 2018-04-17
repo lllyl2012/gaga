@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                             http://www.springframework.org/schema/beans/spring-beans.xsd 
+                             http://www.springframework.org/schema/context 
+                             http://www.springframework.org/schema/context/spring-context.xsd
+                              http://www.springframework.org/schema/util 
+                              http://www.springframework.org/schema/util/spring-util.xsd">
+	<!-- 配置连接池 -->
+    <util:properties location="classpath:db.properties" id="db"></util:properties>
+    <bean id="bds" class="org.apache.commons.dbcp.BasicDataSource">
+    	<property name="driverClassName" value="#{db.driver}"></property>
+    	<property name="url" value="#{db.url}"></property>
+    	<property name="username" value="#{db.username}"></property>
+    	<property name="password" value="#{db.password}"></property>
+    	<property name="initialSize" value="#{db.init}"></property>
+    	<property name="maxActive" value="#{db.maxactive}"></property>
+    </bean>
+</beans>

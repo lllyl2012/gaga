@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TopController {
 	@RequestMapping("/index.do")
 	public String index() {
-		return "index";
+		return "view";
 	}
 }

@@ -1,0 +1,38 @@
+动漫电影
+create table animation(
+id int auto_increment primary key,
+name varchar(50),
+director varchar(30),
+create_time date,
+language varchar(10),
+resolution_ratio varchar(5),
+format varchar(10),
+conntry varchar(20),
+subtitles varchar(5),
+bean_score varchar(5),
+size varchar(10),
+time varchar(10),
+remark varchar(255)
+);
+电影——种类中间表
+create table movie_category(
+id bigint auto_increment primary key,
+movie_id int,
+category_id int
+)
+种类
+create table category(
+id int auto_increment primary key,
+name varchar(8)
+)
+图片
+create table image(
+id int auto_increment primary key,
+path varchar(255)
+)
+演员
+create table performer(
+id int auto_increment primary key,
+movie_id int,
+zh_name varchar(20)
+)
