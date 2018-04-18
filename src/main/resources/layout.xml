@@ -5,4 +5,5 @@
 <tiles-definitions>
   <!-- 项目 -->
    <definition name="view" template="/WEB-INF/index.jsp"></definition>
+   <definition name="page/*" template="/WEB-INF/page/animate.jsp"/>
 </tiles-definitions>

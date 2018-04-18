@@ -9,4 +9,9 @@ public class TopController {
 	public String index() {
 		return "view";
 	}
+	
+	@RequestMapping("/animate.do")
+	public String animate() {
+		return "page/animate";
+	}
 }
