@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class TopController {
-	@RequestMapping("/index.do")
+	@RequestMapping("/index")
 	public String index() {
 		return "view";
 	}
 	
-	@RequestMapping("/animate.do")
+	@RequestMapping("/")
 	public String animate() {
 		return "page/animate";
 	}
