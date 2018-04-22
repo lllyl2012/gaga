@@ -5,5 +5,8 @@
 <tiles-definitions>
   <!-- 项目 -->
    <definition name="view" template="/WEB-INF/index.jsp"></definition>
-   <definition name="page/*" template="/WEB-INF/page/animate.jsp"/>
+   <definition name="page/*" template="/WEB-INF/model.jsp">
+   	 <put-attribute name="header" value="/WEB-INF/nav.jsp"></put-attribute>
+   	 <put-attribute name="body" value="/WEB-INF/page/{1}.jsp"></put-attribute>
+   </definition>
 </tiles-definitions>

@@ -12,6 +12,6 @@ public class TopController {
 	
 	@RequestMapping("/")
 	public String animate() {
-		return "page/animate";
+		return "page/animateBody";
 	}
 }

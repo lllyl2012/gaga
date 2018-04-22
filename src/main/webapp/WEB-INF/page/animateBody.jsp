@@ -1,21 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="basePath" scope="request"
-	value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="Stylesheet" type="text/css" href="${basePath}/css/common.css">
-<link rel="Stylesheet" type="text/css" href="${basePath}/css/nav.css">
 <link rel="Stylesheet" type="text/css"
 	href="${basePath}/css/animate/animate.css">
-<script type="text/javascript" src="${basePath}/js/jquery-1.11.1.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
-	
 	<div class="nav">
 		<img id="navBackground" alt="" src="${basePath}/img/view/nav.jpg">
 		<div id="title">努力的桂</div>
@@ -46,7 +40,7 @@
 						<img class="lunbo-img" src="${base}/${hot4}">
 					</div></a>
 				<ul>
-				
+
 					<li id="lunbo-li5" value="5" onmouseover="stoponit(this)"
 						onmouseout="startagain(this)" class=""></li>
 					<li id="lunbo-li4" value="4" onmouseover="stoponit(this)"

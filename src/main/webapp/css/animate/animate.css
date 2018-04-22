@@ -87,8 +87,11 @@
 }
 #title{
 	position:absolute;
-	top:30px;
+	top:60px;
 	left:70px;
+	font-size:24px;
+	font-weight:700;
+	color:red;
 }
 .nav_list{
 	position:absolute;
