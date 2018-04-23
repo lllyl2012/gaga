@@ -15,6 +15,6 @@
    
    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
    	<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
-   	<property name="basePackage" value="top.lllyl2012.dao"></property>
+   	<property name="basePackage" value="top.lllyl2012.bean.mapper"></property>
    </bean>
 </beans>
