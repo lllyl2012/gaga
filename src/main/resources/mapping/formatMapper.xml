@@ -4,6 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="top.lllyl2012.bean.mapper.FormatMapper">
 	<select id="getAll" resultType="java.lang.String">
-		SELECT * FROM format
+		SELECT name FROM format
 	</select>
 </mapper>
