@@ -11,8 +11,8 @@
 <!-- 这个是导航-->
 	<nav>
 		<ul>
-			<li><a id="nav-ul-first" href="${base}/index.do">首页</a></li>
-			<li><a href="#">JAVA技术</a></li>
+			<li><a id="nav-ul-first" href="${base}">首页</a></li>
+			<li><a href="${base}/index.do">JAVA技术</a></li>
 		</ul>
 	</nav>
 </body>

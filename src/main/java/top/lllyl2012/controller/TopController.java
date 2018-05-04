@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class TopController {
-	@RequestMapping("/index")
-	public String index() {
-		return "view";
-	}
-	
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String animate() {
 		return "page/animateBody";

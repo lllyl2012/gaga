@@ -4,9 +4,10 @@
      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
   <!-- 项目 -->
-   <definition name="view" template="/WEB-INF/index.jsp"></definition>
+   <definition name="login" template="/WEB-INF/page/login.jsp"></definition>
    <definition name="page/*" template="/WEB-INF/model.jsp">
    	 <put-attribute name="header" value="/WEB-INF/nav.jsp"></put-attribute>
    	 <put-attribute name="body" value="/WEB-INF/page/{1}.jsp"></put-attribute>
+   	 <put-attribute name="footer" value="/WEB-INF/footer.jsp"></put-attribute>
    </definition>
 </tiles-definitions>

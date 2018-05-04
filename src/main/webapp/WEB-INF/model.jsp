@@ -10,11 +10,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="Stylesheet" type="text/css" href="${basePath}/css/common.css">
 <link rel="Stylesheet" type="text/css" href="${basePath}/css/nav.css">
+<link rel="Stylesheet" type="text/css" href="${basePath}/css/footer.css">
 <script type="text/javascript" src="${basePath}/js/jquery-1.11.1.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 	<tiles:insertAttribute name="header"/>
 	<tiles:insertAttribute name="body"/>
+	<tiles:insertAttribute name="footer"/>
 </body>
 </html>
