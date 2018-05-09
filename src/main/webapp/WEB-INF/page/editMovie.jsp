@@ -16,18 +16,21 @@
 </head>
 <body>
 <div id="body">
-	<form action="${basePath}/admin/editMovie" method="post" enctype="multipart/form-data">
+	<form id="form" action="${basePath}/admin/editMovie" method="post" enctype="multipart/form-data">
 		<input hidden="hidden" name="id" value="${movie.id}"><hr>
+		百度云链接：<input type="text" name="baiduyun" value="${movie.baiduyun}"><hr>
+		百度云密码：<input type="text" name="baiduyunmm" value="${movie.baiduyunmm}"><hr>
+		迅雷链接：<input type="text" name="xunlei" value="${movie.xunlei}"><hr>
 		片名：<input type="text" name="name" value="${movie.name}"><hr>
 		导演：<input type="text" name="director" value="${movie.director}"><hr>
 		演员：
 			<div>
 				<c:forEach var="item" items="${performer}">
-					<input type="text" name="performer" value="${item}"><hr>
+					<input type="text" name="performer" class="performer" value="${item}"><hr>
 				</c:forEach>
-				<input type="text" name="performer" value="">
+				<input type="text" name="performer" class="performer" value="">
 			</div>
-			<button id="performerAdd" onclick="addProformer()">增加</button>
+			<input type="button" id="performerAdd" onclick="addProformer()" value="增加">
 			<hr>
 		上映日期：<input type="text" name="createTime" value="<fmt:formatDate value="${movie.createTime}" pattern="yyyy-MM-dd" />" placeholder="格式：2011-11-11"><hr>
 		语言：
@@ -81,7 +84,8 @@
 			<h3>选择了：</h3>
 			<div id="selected_photos">
 			</div>
-		<input type="submit" value="提交">
+		
+		<input type="submit" value="提交" onclick="checkAll()">
 		<input type="button" value="取消">
 	</form>
 </div>

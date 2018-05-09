@@ -81,7 +81,19 @@
 			</div>
 		</div>
 		<div class="rightAdv">
-			
+			<h2 class="rankTitle">本月排行版</h2>
+			<ul class="rankList">
+				<li>fsdafdsfds</li>
+				<li>sadfasdfsdf</li>
+				<li>wererewrwe</li>
+				<li>12e333e</li>
+				<li>wdf323r</li>
+				<li>r9w8ar098war</li>
+				<li>43r43e</li>
+				<li>a4re4rer</li>
+				<li>a4r43r4r</li>
+				<li>43r4r4rr334r43</li>
+			</ul>	
 		</div>
 	</div>
 	<div class="footer"></div>

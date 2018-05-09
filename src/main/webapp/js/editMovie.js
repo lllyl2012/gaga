@@ -1,6 +1,10 @@
+//增加演员
 function addProformer(){
-	
+	var str = '<br><input type="text" name="performer" class="performer" value="">';
+	$("input[name='performer']").parent().append(str);
 }
+
+/*AJAX上传图片*/
 var photos=$("#photos");
 var selectedPhotos=$("#selected_photos");
 photos.change(function(){
@@ -36,10 +40,15 @@ photos.change(function(){
             beforeSend: function(request) {
                 request.setRequestHeader(header, token);
             },
-            success:function(json){
+            success:function(j){
+            	console.log(j);
                 ajaxBtn.val("JQuery 上载");
-                selectedPhotos.html(json.message);
+                
+                var content = '<input type="hidden" class="image" value="'+j+'">';
+                $("#form").append(content);
             }
         });
 
     });
+
+//

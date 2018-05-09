@@ -64,16 +64,17 @@ public class AdminController {
 	@ResponseBody 
 	public String uploadImages( @RequestParam("images") MultipartFile[] images, HttpServletRequest request) throws IOException { 
 		//保存到文件系统 
-		String path="d:\\gaga";
+		String path="d:/gaga/";
 		//WEB路径 
 //		path = request.getServletContext().getRealPath(path); System.out.println(path); 
 		//创建upload文件夹 
 		File dir = new File(path);  
+		File file = null;
 		for (MultipartFile image : images) {
-			File file=new File(dir, image.getOriginalFilename());
+			file=new File(dir, image.getOriginalFilename());
 			System.out.println("save:"+file); //将上载文件保存到文件中 
 			image.transferTo(file); 
 		}
-		return "上载成功";
+		return file.toString();
 	}
 }

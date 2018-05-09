@@ -215,3 +215,19 @@
 	position:absolute;
 	top:244px;
 }
+
+/*ÅÅÐÐ°ñ*/
+.rankTitle{
+	border:1px solid red;
+	font-size:150%;
+	font-weight:bold;
+	color:#f02f60;
+}
+.rankList{
+	border:1px solid blue;
+	list-style-type:none;
+	padding:5px;
+}
+.rankList>li{
+	margin:8px;
+}
