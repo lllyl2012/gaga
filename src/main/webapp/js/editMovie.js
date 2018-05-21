@@ -51,4 +51,67 @@ photos.change(function(){
 
     });
 
-//
+//提交表单
+function checkAll(){
+	if($("#name").val() == ''){
+		console.log("need name")
+		return;
+	}
+	var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");
+    var id = $("#id").val();
+    var name = $("#name").val();
+    var director = $("#director").val();
+    var createTime0 = $("#createTime").val(); 
+    var createTimeArr = createTime0.split("-");
+    var createTime = new Date();
+    if(createTimeArr.length!=1){
+    	createTime.setFullYear(createTimeArr[0],++createTimeArr[1],createTimeArr[2]);
+    }
+    var language=$("#language").val();
+    var resolutionRatio = $("#resolutionRatio").val();
+    var format=$("#format").val();
+    var country=$("#country").val();
+    var subtitles=$("#subtitles").val();
+    var beanScore=$("#beanScore").val();
+    var size=$("#size").val();
+    var time=$("#time").val();
+    var remark=$("#remark").val();
+    var baiduyun=$("#baiduyun").val();
+    var baiduyunmm=$("#baiduyunmm").val();
+    var xunlei=$("#xunlei").val();
+    var performer = new Array();
+    var i = 0;
+    $("input[name='performer']").each(function(){
+    	if($(this).val() != ''){
+    		performer[i++] = $(this).val();
+    	}
+    });
+    var image = new Array();
+    i = 0;
+    $(".image").each(function(){
+    	if($(this).val() != ''){
+    		image[i++] = $(this).val();
+    	}
+    })
+    console.log(image);
+	$.ajax({
+        url:"/addMovieHandle.do",
+        type:"POST",
+        data:{id:id,name:name,director:director,createTime:createTime,language:language,resolutionRatio:resolutionRatio,
+        	format:format,conntry:country,subtitles:subtitles,beanScore:beanScore,
+        	size:size,time:time,remark:remark,baiduyun:baiduyun,
+        	baiduyunmm:baiduyunmm,xunlei:xunlei,performerName:performer,imagePath:image},
+        dataType:"text",
+        traditional: true,
+        beforeSend: function(request) {
+            request.setRequestHeader(header, token);
+        },
+        success:function(j){
+        	console.log(j)
+        	if(j=='ok'){
+        		alert('上传成功');
+        	}
+        }
+    });
+}

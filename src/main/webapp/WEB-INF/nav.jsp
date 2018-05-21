@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="basePath" scope="request"
+	value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +14,8 @@
 <!-- 这个是导航-->
 	<nav>
 		<ul>
-			<li><a id="nav-ul-first" href="${base}">首页</a></li>
-			<li><a href="${base}/index.do">JAVA技术</a></li>
+			<li><a id="nav-ul-first" href="${basePath}">首页</a></li>
+			<li><a href="${basePath}/index.do">JAVA技术</a></li>
 		</ul>
 	</nav>
 </body>
