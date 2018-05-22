@@ -112,29 +112,28 @@
     </if>
   </delete>
   <insert id="insert" parameterType="top.lllyl2012.bean.Animation">
-    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into animation (id, name, director, 
-      create_time, language, resolution_ratio, 
-      format, conntry, subtitles, 
-      bean_score, size, time, 
-      remark, baiduyun, baiduyunmm, 
-      xunlei)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{director,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=DATE}, #{language,jdbcType=VARCHAR}, #{resolutionRatio,jdbcType=VARCHAR}, 
-      #{format,jdbcType=VARCHAR}, #{conntry,jdbcType=VARCHAR}, #{subtitles,jdbcType=VARCHAR}, 
-      #{beanScore,jdbcType=VARCHAR}, #{size,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, 
-      #{remark,jdbcType=VARCHAR}, #{baiduyun,jdbcType=VARCHAR}, #{baiduyunmm,jdbcType=VARCHAR}, 
-      #{xunlei,jdbcType=VARCHAR})
+    insert into animation (name, director, create_time, 
+      language, resolution_ratio, format, 
+      conntry, subtitles, bean_score, 
+      size, time, remark, 
+      baiduyun, baiduyunmm, xunlei
+      )
+    values (#{name,jdbcType=VARCHAR}, #{director,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
+      #{language,jdbcType=VARCHAR}, #{resolutionRatio,jdbcType=VARCHAR}, #{format,jdbcType=VARCHAR}, 
+      #{conntry,jdbcType=VARCHAR}, #{subtitles,jdbcType=VARCHAR}, #{beanScore,jdbcType=VARCHAR}, 
+      #{size,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{baiduyun,jdbcType=VARCHAR}, #{baiduyunmm,jdbcType=VARCHAR}, #{xunlei,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="top.lllyl2012.bean.Animation">
-    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into animation
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      id,
       <if test="name != null">
         name,
       </if>
@@ -182,7 +181,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      #{id,jdbcType=INTEGER},
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>

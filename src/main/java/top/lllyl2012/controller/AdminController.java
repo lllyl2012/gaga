@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.mysql.cj.xdevapi.JsonArray;
+
 import top.lllyl2012.bean.Animation;
 import top.lllyl2012.bean.other.ResponseResult;
 import top.lllyl2012.service.AnimationService;
@@ -85,6 +88,8 @@ public class AdminController {
 			imagePath[i++] = file.toString();
 		}
 		responseResult.setData(imagePath);
+		
+		
 		return responseResult;
 	}
 	

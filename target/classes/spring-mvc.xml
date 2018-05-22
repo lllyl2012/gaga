@@ -12,20 +12,39 @@
                              http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	<context:component-scan
 		base-package="top.lllyl2012" />
+<!-- 	<mvc:annotation-driven> -->
+<!-- 		<mvc:message-converters> -->
+<!-- 			<bean -->
+<!-- 				class="org.springframework.http.converter.StringHttpMessageConverter"> -->
+<!-- 				<property name="supportedMediaTypes"> -->
+<!-- 					<list> -->
+<!-- 						<value>text/html;charset=utf-8</value> -->
+<!-- 						<value>application/json;charset=utf-8</value> -->
+<!-- 						<value>*/*;charset=utf-8</value> -->
+<!-- 					</list> -->
+<!-- 				</property> -->
+<!-- 			</bean> -->
+<!-- 		</mvc:message-converters> -->
+<!-- 	</mvc:annotation-driven> -->
 	<mvc:annotation-driven>
-		<mvc:message-converters>
-			<bean
-				class="org.springframework.http.converter.StringHttpMessageConverter">
-				<property name="supportedMediaTypes">
-					<list>
-						<value>text/html;charset=utf-8</value>
-						<value>application/json;charset=utf-8</value>
-						<value>*/*;charset=utf-8</value>
-					</list>
-				</property>
-			</bean>
-		</mvc:message-converters>
-	</mvc:annotation-driven>
+        <mvc:message-converters>
+            <ref bean="stringHttpMessageConverter"/>
+            <ref bean="mappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <bean id="stringHttpMessageConverter"
+          class="org.springframework.http.converter.StringHttpMessageConverter"/>
+
+    <!--解决IE浏览器json文件下载和json数据中午乱码的问题-->
+    <bean id="mappingJackson2HttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
 	<mvc:resources location="/img/" mapping="/img/**" />
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources location="/css/" mapping="/css/**" />
