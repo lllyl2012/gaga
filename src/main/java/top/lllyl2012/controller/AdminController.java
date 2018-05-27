@@ -67,7 +67,7 @@ public class AdminController {
 		return "{gaag}";
 	}
 	/** * 处理上载请求, 保存多个文件 */ 
-	@RequestMapping(value="uploadImages.do", method=RequestMethod.POST,produces = "text/json;charset=UTF-8") 
+	@RequestMapping(value="uploadImages.do", method=RequestMethod.POST) 
 	@ResponseBody 
 	public ResponseResult<String[]> uploadImages( @RequestParam("images") MultipartFile[] images, HttpServletRequest request) throws IOException { 
 		ResponseResult<String[]> responseResult = new ResponseResult<>();
@@ -98,7 +98,7 @@ public class AdminController {
 	 * 处理编辑请求
 	 * @return
 	 */
-	@RequestMapping(value="/addMovieHandle.do",method=RequestMethod.POST,produces = "text/json;charset=UTF-8")
+	@RequestMapping(value="/addMovieHandle.do",method=RequestMethod.POST)
 	@ResponseBody
 	public String addMovieHandle(Model model,Animation animation,String[] imagePath,String[] performerName) {
 		animationService.insert(animation,imagePath,performerName);

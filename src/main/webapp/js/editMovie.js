@@ -34,18 +34,20 @@ photos.change(function(){
             url:url,
             type:"POST",
             data:data,
-            dataType:"text",
+            dataType:"json",
             processData:false, //不要处理 data数据！！！
             contentType:false, //不要有JQuery设定ContentType
             beforeSend: function(request) {
                 request.setRequestHeader(header, token);
             },
             success:function(j){
-            	console.log(j);
+            	console.log(j.data);
                 ajaxBtn.val("JQuery 上载");
-                
-                var content = '<input type="hidden" class="image" value="'+j+'">';
-                $("#form").append(content);
+                var content = '';
+                for(var i=0;i<j.data.length;i++){
+                	content = '<input type="hidden" class="image" value="'+j.data[i]+'">';
+                	$("#form").append(content);
+                }
             }
         });
 
