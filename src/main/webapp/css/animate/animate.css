@@ -7,20 +7,19 @@
 	background-color:white;
 	width:1050px;
 	margin:0 auto;
-	border:1px solid blue;
 	position:relative;
 }
 .content{
 	position:relative;
 	width:821px;
-	border:1px solid red;
 }
 .rightAdv{
+	border-left:1px solid #c0c0c0;
 	position:absolute;
 	left:821px;
 	top:0px;
 	width:229px;
-	border:1px solid green;
+	height:1000px;
 }
 /*轮播*/
 #tiaoye {
@@ -180,7 +179,7 @@
 }
 /*漫改真人电影*/
 #animateMovie{
-	border:1px solid red;
+	border-top:1px solid #c0c0c0;
 	width:821px;
 	height:900px;
 }
@@ -190,13 +189,11 @@
 }
 #animateMovieUl{
  	width:821px;
- 	border:1px solid green;	
  	list-style-type:none;
  	position:relative;
 }
 .animateMovieLi{
 	float:left;
-	border:1px solid blue;
 	width:150px;
 	height:267px;
 	position:relative;
@@ -218,13 +215,11 @@
 
 /*排行榜*/
 .rankTitle{
-	border:1px solid red;
 	font-size:150%;
 	font-weight:bold;
 	color:#f02f60;
 }
 .rankList{
-	border:1px solid blue;
 	list-style-type:none;
 	padding:5px;
 }

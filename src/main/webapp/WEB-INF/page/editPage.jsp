@@ -84,9 +84,11 @@ body{
 		editor.create()
 		
 		document.getElementById('btn1').addEventListener('click', function () {
-	        var json = editor.txt.getJSON()  // 获取 JSON 格式的内容
-	        var jsonStr = JSON.stringify(json)
-	        console.log(json)
-	        console.log(jsonStr)
-	    })
+	        // 读取 html
+	        var content = editor.txt.html()
+	        //上传到服务器
+	        $.ajax({
+	        	
+	        })
+	    }, false)
 	</script>
