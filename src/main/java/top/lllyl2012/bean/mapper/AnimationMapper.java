@@ -27,4 +27,6 @@ public interface AnimationMapper {
     int updateByPrimaryKeySelective(Animation record);
 
     int updateByPrimaryKey(Animation record);
+
+	List<Animation> selectNew();
 }

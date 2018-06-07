@@ -1,15 +1,20 @@
 package top.lllyl2012.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import top.lllyl2012.bean.Animation;
 import top.lllyl2012.bean.Image;
+import top.lllyl2012.bean.IndexRank;
+import top.lllyl2012.bean.News;
 import top.lllyl2012.bean.Performer;
 import top.lllyl2012.bean.mapper.AnimationMapper;
 import top.lllyl2012.bean.mapper.ImageMapper;
 import top.lllyl2012.bean.mapper.PerformerMapper;
 import top.lllyl2012.service.AnimationService;
+import top.lllyl2012.service.IndexRankService;
 @Service
 public class AnimationServiceImpl implements AnimationService{
 	@Autowired
@@ -20,6 +25,9 @@ public class AnimationServiceImpl implements AnimationService{
 	
 	@Autowired
 	private PerformerMapper performerMapper;
+	
+	@Autowired
+	private IndexRankService indexRankService; 
 	
 	@Override
 	public Integer insert(Animation animation, String[] imagePath, String[] performerName) {
@@ -43,4 +51,15 @@ public class AnimationServiceImpl implements AnimationService{
 		return num;
 	}
 
+	@Override
+	public List<Animation> selectAll() {
+		List<Animation> animations = animationMapper.selectNew();
+		return animations;
+	}
+
+	@Override
+	public Animation selectById(int id) {
+		Animation animation = animationMapper.selectByPrimaryKey(id);
+		return animation;
+	}
 }

@@ -67,3 +67,31 @@ id bigint auto_increment primary key,
 movie_id int comment '电影ID',
 category_id int comment '种类ID'
 )comment='电影——种类中间表'
+
+
+
+
+2018/6/5
+create table index_rank(
+id int auto_increment primary key,
+animation_id int comment '电影ID',
+category int comment '种类'
+)comment='首页排行版'
+
+create table index_news(
+id int auto_increment primary key,
+news_id int comment '新闻ID',
+title varchar(50) comment '新闻标题'
+)comment='首页新闻热点'
+
+create table news(
+id int auto_increment primary key,
+title varchar(50) comment '新闻标题',
+content text comment '内容'
+)comment='新闻'
+
+create table index_lunbo(
+id int auto_increment primary key,
+image_path varchar(255) comment '图片路径',
+animation_id int comment '电影ID'
+)comment='首页轮播'

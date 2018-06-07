@@ -1,15 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="Stylesheet" type="text/css"
 	href="${basePath}/css/animate/animate.css">
-<title>Insert title here</title>
-</head>
-<body>
+<title>努力的桂</title>
 	<div class="nav">
 		<img id="navBackground" alt="" src="${basePath}/img/view/nav.jpg">
 		<div id="title">努力的桂</div>
@@ -83,20 +77,19 @@
 		<div class="rightAdv">
 			<h2 class="rankTitle">本月排行版</h2>
 			<ul class="rankList">
-				<li>fsdafdsfds</li>
-				<li>sadfasdfsdf</li>
-				<li>wererewrwe</li>
-				<li>12e333e</li>
-				<li>wdf323r</li>
-				<li>r9w8ar098war</li>
-				<li>43r43e</li>
-				<li>a4re4rer</li>
-				<li>a4r43r4r</li>
-				<li>43r4r4rr334r43</li>
+				<li><a href="">asdfafs</a></li>
+				<li><a href="">asdfafs</a></li>
+				<li><a href="">asdfafs</a></li>
+				<li><a href="">asdfafs</a></li>
+				<li><a href="">asdfafs</a></li>
+				<li><a href="">asdfafs</a></li>
+				<li><a href="">asdfafs</a></li>
+				<li><a href="">asdfafs</a></li>
+				<li><a href="">asdfafs</a></li>
+				<li><a href="">asdfafs</a></li>
+				<li><a href="">asdfafs</a></li>
 			</ul>	
 		</div>
 	</div>
 	<div class="footer"></div>
 	<script type="text/javascript" src="${basePath}/js/animate.js"></script>
-</body>
-</html>

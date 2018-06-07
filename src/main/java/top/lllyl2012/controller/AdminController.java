@@ -88,8 +88,6 @@ public class AdminController {
 			imagePath[i++] = file.toString();
 		}
 		responseResult.setData(imagePath);
-		
-		
 		return responseResult;
 	}
 	

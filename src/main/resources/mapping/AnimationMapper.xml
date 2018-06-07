@@ -382,4 +382,7 @@
       xunlei = #{xunlei,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectNew" resultMap="BaseResultMap">
+  	SELECT * FROM animation ORDER BY CREATE_TIME LIMIT 0,10
+  </select>
 </mapper>
